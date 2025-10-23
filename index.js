@@ -31,7 +31,43 @@ function hello() {
 const person = {
     name: 'Ruslan',
     age: 51,
-    sayHello: hello
+    sayHello: hello,
+    sayHelloWindow: hello.bind(document),
+    logInfo: function(job, phone) {
+        console.group(`${this.name} info:`)
+        console.log(`Name is ${this.name}`)
+        console.log(`Age is ${this.age}`)
+        console.log(`Job is ${job}`)
+        console.log(`Phone is ${phone}`)
+        console.groupEnd()
+    }
 }
 
-console.log(person.sayHello())
+const lena = {
+    name: 'Olena',
+    age: 41
+}
+
+// person.logInfo.bind(lena,'Frontend', 4092354551)()
+// person.logInfo.call(lena, 'Frontend', 4092354551)
+// person.logInfo.apply(lena, ['Frontend', 4092354551])
+
+const array = [1, 2, 3, 4, 5]
+
+// function multBy(arr, n) {
+//      return arr.map(function(i) {
+//            return i * n
+//      })
+// }
+
+Array.prototype.multBy = function(n) {
+    return this.map(function(i) {
+    return i * n
+    })
+}
+
+
+
+console.log(array.multBy(2))
+
+ 
