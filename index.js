@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 
 // Practice - (prototype)
 
@@ -24,35 +24,35 @@
 
 // Practice - (this)
 
-function hello() {
-    console.log('Hello', this)
-}
+// function hello() {
+//     console.log('Hello', this)
+// }
 
-const person = {
-    name: 'Ruslan',
-    age: 51,
-    sayHello: hello,
-    sayHelloWindow: hello.bind(document),
-    logInfo: function(job, phone) {
-        console.group(`${this.name} info:`)
-        console.log(`Name is ${this.name}`)
-        console.log(`Age is ${this.age}`)
-        console.log(`Job is ${job}`)
-        console.log(`Phone is ${phone}`)
-        console.groupEnd()
-    }
-}
+// const person = {
+//     name: 'Ruslan',
+//     age: 51,
+//     sayHello: hello,
+//     sayHelloWindow: hello.bind(document),
+//     logInfo: function(job, phone) {
+//         console.group(`${this.name} info:`)
+//         console.log(`Name is ${this.name}`)
+//         console.log(`Age is ${this.age}`)
+//         console.log(`Job is ${job}`)
+//         console.log(`Phone is ${phone}`)
+//         console.groupEnd()
+//     }
+// }
 
-const lena = {
-    name: 'Olena',
-    age: 41
-}
+// const lena = {
+//     name: 'Olena',
+//     age: 41
+// }
 
 // person.logInfo.bind(lena,'Frontend', 4092354551)()
 // person.logInfo.call(lena, 'Frontend', 4092354551)
 // person.logInfo.apply(lena, ['Frontend', 4092354551])
 
-const array = [1, 2, 3, 4, 5]
+// const array = [1, 2, 3, 4, 5]
 
 // function multBy(arr, n) {
 //      return arr.map(function(i) {
@@ -60,14 +60,22 @@ const array = [1, 2, 3, 4, 5]
 //      })
 // }
 
-Array.prototype.multBy = function(n) {
-    return this.map(function(i) {
-    return i * n
-    })
+// Array.prototype.multBy = function(n) {
+//     return this.map(function(i) {
+//     return i * n
+//     })
+// }
+
+
+
+// console.log(array.multBy(2))
+
+function doClick() {
+    console.log("click", this)
 }
 
+// document.body.addEventListener('click', doClick);
+
+ document.body.addEventListener("click", doClick.bind("Hello"));
 
 
-console.log(array.multBy(2))
-
- 
