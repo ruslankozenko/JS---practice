@@ -1,4 +1,4 @@
-'use strict';
+
 
 // Practice - (prototype)
 
@@ -70,12 +70,6 @@
 
 // console.log(array.multBy(2))
 
-function doClick() {
-    console.log("click", this)
-}
-
-// document.body.addEventListener('click', doClick);
-
- document.body.addEventListener("click", doClick.bind("Hello"));
+ 
 
 
